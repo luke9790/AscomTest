@@ -32,7 +32,7 @@ The application manages entities of type `Patient`.
 Clone the repository to your local machine:
 
 ```bash
-git clone [<repository-url>](https://github.com/luke9790/AscomTest)
+git clone https://github.com/luke9790/AscomTest
 cd AscomTest
 ```
 
