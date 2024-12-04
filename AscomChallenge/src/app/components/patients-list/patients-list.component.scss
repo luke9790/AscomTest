@@ -1,0 +1,195 @@
+@use '@angular/material' as mat;
+
+/*    Contenitore Principale	*/
+   .patients-container {
+	padding: 20px;
+	max-width: 1200px;
+	margin: 50px auto;
+	background: linear-gradient(135deg, #f5f7fa, #e4ebf1);
+	border-radius: 12px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	font-family: 'Inter', sans-serif;
+  }
+  
+  .patients-container h1 {
+	font-size: 2rem;
+	text-align: center;
+	color: #0d47a1;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	font-weight: 600;
+  }
+  
+  /*	 Barra Filtri	 */
+  .filter-bar {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 16px;
+  }
+  
+  .filter-bar button {
+	font-size: 0.85rem;
+	height: 40px;
+	padding: 0 16px;
+	border-radius: 8px;
+	background-color: #1976d2;
+	color: white;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: all 0.2s ease-in-out;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	border: none;
+  }
+  
+  .filter-bar button mat-icon {
+	font-size: 1.2rem;
+  }
+  
+  .filter-bar button:hover {
+	background-color: #1565c0;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transform: translateY(-1px);
+  }
+  
+  /* 	 Filtri Dinamici	*/
+
+	.dense-filters {
+	@include mat.form-field-density(-4);
+	}
+
+
+  .filter-row {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	padding: 8px;
+	border-radius: 6px;
+	background: #ffffff;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+	margin-bottom: 8px;
+	height: 40px;
+	overflow: hidden;
+  }
+
+  .filter-row mat-form-field {
+	flex: 1;
+	height: 36px;
+	font-size: 0.8rem;
+  }
+  
+  .filter-row mat-form-field .mat-form-field-wrapper {
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 100%;
+  }
+  
+  .filter-row mat-form-field .mat-form-field-flex {
+	align-items: center;
+	height: 100%;
+  }
+  
+  .filter-row mat-form-field .mat-form-field-infix {
+	padding: 0 8px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+  }
+  
+  
+  .filter-row mat-form-field {
+	flex: 1;
+	font-size: 0.85rem;
+	margin: 0;
+	height: 100%;
+  }
+  
+  .filter-row mat-form-field.mat-form-field-appearance-outline .mat-form-field-wrapper {
+	padding: 2px 0;
+  }
+  
+  .filter-row button {
+	background-color: transparent;
+	color: #f44336;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	height: 32px;
+	width: 32px;
+	transition: all 0.2s ease;
+	box-shadow: none;
+  }
+  
+  .filter-row button:hover {
+	background-color: rgba(244, 67, 54, 0.1);
+	transform: scale(1.1);
+  }
+  
+  /* 	 Tabella	 */
+  table.mat-table {
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+  }
+  
+  .mat-header-cell {
+	background-color: #1e88e5;
+	color: #fff;
+	font-weight: 600;
+	text-transform: uppercase;
+	padding: 10px;
+	font-size: 0.85rem;
+  }
+  
+  .mat-cell {
+	background-color: #ffffff;
+	padding: 12px;
+	font-size: 0.85rem;
+	color: #333;
+	border-bottom: 1px solid #ddd;
+  }
+  
+  .mat-row.ok {
+	background-color: #e8f5e9;
+  }
+  
+  .mat-row.warning {
+	background-color: #ffebee;
+  }
+  
+  .mat-row:hover {
+	background-color: #e3f2fd;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+  }
+
+  .clickable-row {
+	cursor: pointer;
+  }
+  .clickable-row:hover {
+	background-color: #f1f1f1;
+  }
+  
+  
+  /* 	 Badge Stato	 */
+  .badge {
+	display: inline-block;
+	padding: 2px 8px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-radius: 6px;
+	color: #fff;
+  }
+  
+  .badge.ok {
+	background-color: #38a169;
+  }
+  
+  .badge.warning {
+	background-color: #e53e3e;
+  }
+  

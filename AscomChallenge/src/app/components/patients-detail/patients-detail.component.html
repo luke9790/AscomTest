@@ -1,0 +1,63 @@
+<h2 mat-dialog-title class="dense-filters">Patient Details</h2>
+<div mat-dialog-content>
+
+  <mat-form-field appearance="outline" class="form-field-id full-width .dense-filters">
+    <mat-label>ID</mat-label>
+    <input matInput [value]="patient.id" readonly />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width .dense-filters">
+    <mat-label>Surname</mat-label>
+    <input matInput [(ngModel)]="patient.familyName" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width .dense-filters">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="patient.givenName" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width .dense-filters">
+    <mat-label>Birth Date</mat-label>
+    <input matInput [value]="patient.birthDate | date: 'longDate'" readonly />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width .dense-filters">
+    <mat-label>Sex</mat-label>
+    <mat-select [(ngModel)]="patient.sex">
+      <mat-option value="M">Male</mat-option>
+      <mat-option value="F">Female</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <h3>Parameters ({{ patient.parameters.length || 0 }})</h3>
+  <table mat-table [dataSource]="patient.parameters" class="mat-elevation-z8 full-width">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let parameter"> {{ parameter.name }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="value">
+      <th mat-header-cell *matHeaderCellDef> Value </th>
+      <td mat-cell *matCellDef="let parameter"> {{ parameter.value | number: '1.2-2' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="alarm">
+      <th mat-header-cell *matHeaderCellDef> Alarm </th>
+      <td mat-cell *matCellDef="let parameter">
+        <span [ngClass]="{'alarm-true': parameter.alarm, 'alarm-false': !parameter.alarm}">
+          {{ parameter.alarm ? 'Yes' : 'No' }}
+        </span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['name', 'value', 'alarm']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name', 'value', 'alarm'];"></tr>
+  </table>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-raised-button color="primary" [disabled]="isSaving" (click)="save()">Save</button>
+</div>

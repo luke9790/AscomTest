@@ -1,0 +1,36 @@
+@use '@angular/material' as mat;
+ 
+
+.dense-filters {
+@include mat.form-field-density(-6);
+}
+
+.form-field-id {
+	margin-top: 16px;
+	margin-bottom: 8px;
+	padding: 8px 0;
+  }
+  
+.full-width {
+width: 100%;
+margin-bottom: 16px;
+}
+
+table {
+width: 100%;
+}
+
+.error-message {
+color: red;
+margin-top: 10px;
+}
+
+.alarm-true {
+color: red;
+font-weight: bold;
+}
+
+.alarm-false {
+color: green;
+font-weight: bold;
+}
