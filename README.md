@@ -32,8 +32,8 @@ The application manages entities of type `Patient`.
 Clone the repository to your local machine:
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone [<repository-url>](https://github.com/luke9790/AscomTest)
+cd AscomTest
 ```
 
 ### Step 2: Set Up Environment Variables
