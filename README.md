@@ -48,14 +48,7 @@ cd AscomTest
    API_PASSWORD=your-password
    ```
 
-### Step 3: Install Dependencies
-Run the following command to ensure all required packages are installed and that Angular CLI version 18 is available:
-
-```bash
-make install
-```
-
-### Step 4: Start the Application
+### Step 3: Start the Application
 To start the Angular development server, run:
 
 ```bash
